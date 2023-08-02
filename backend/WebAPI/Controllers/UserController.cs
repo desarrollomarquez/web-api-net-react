@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             return await _context.User.ToListAsync();
         }
 
-        // GET: api/User/5
+        // GET: api/User/
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -84,7 +84,6 @@ namespace WebAPI.Controllers
         {
             _context.User.Add(user);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
